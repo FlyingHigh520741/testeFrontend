@@ -1,0 +1,352 @@
+/*  NOS HTML'S INICIEI CRIANDO O CABEÇALHO COM A TAG nav QUE SIMBOLIZA NAVEGAÇÃO,
+    ORGANIZEI POR div's POR SER O QUE TENHO MAIS AFINIDADE, MAS PODERIA 
+    UTILIZAR OUTRAS TAGS E NOMEEI AS CLASSES COM NOMES QUE ME FAÇAM CONEXÃO 
+    COM A tag EM QUESTAO, ASSIM FACILITANDO O USO E ENTENDIMENTO. SEGUI 
+    DESSA MANEIRA DURANTE TODO O HTML, COLOCANDO div DENTRO DE div PARA 
+    PODER ESTILIZAR DA FORMA SOLICITADA*/
+
+
+/*PARA COMEÇAR A ESTILIZAR PRIMEIRAMENTE IMPORTEI AS FONTES SOLICITADAS PARA USO COM @font-face, TENTEI PESQUISA-LAS NO GOOGLE FONTS E NAO ENCONTREI, POR ISSO FIZ DESSA FORMA, A QUAL EU INICIALMENTE NAO CONHECIA ENTAO PESQUISE PARA SABER COMO UTILIZAR*/
+@font-face {
+    font-family: 'Helvetica';
+    src: url('fontes/Helvetica.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeueBold';
+    src: url('fontes/HelveticaNeueBold.otf') format('opentype');
+}
+*{/*AQUI UTILIZEI O ASTERISTICO PARA SELECIONAR O CSS INTEIRO E ZERAR O PADDING E A MARGIN PARA NAO TER PROBLEMAS COM FORMATACOES FUTURAS*/
+    padding: 0;
+    margin: 0;
+}
+* h1{ /*DEFINI FONTE PARA TODOS OS h1 */
+    font-family:'HelveticaNeueBold';
+}
+
+* p{ /*DEFINI FONTE PARA TODOS OS p */
+    font-family: 'Helvetica';
+}
+header{/*ESTILIZANDO O HEADER ZEREI O TOP E O LEFT PARA GRUDA-LO EM CIMA E NA ESQUERDA E DEFINI A LARGURA PARA OCUPAR A TELA INTEIRA E UTILIZEI O z-index PARA SOBREPOR O CONTEUDO E FIXEI A POSICAO PARA MANTELO NO TOPO AO DESCER A PAGINA*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    background-color: white;
+}
+
+.cabecalho{/* Aqui eu defini o layout do cabeçalho usando flexbox. O 'display: flex' permite que os elementos dentro do cabeçalho sejam posicionados lado a lado. 'justify-content: space-between' distribui os elementos de forma uniforme, criando espaço entre eles. A largura foi definida como 100% para ocupar toda a largura disponível. A borda inferior separa o cabeçalho do restante do conteúdo, e o alinhamento vertical centralizado ('align-items: center') garante que todos os elementos fiquem centralizados verticalmente dentro do cabeçalho. */
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+    border-bottom: 1px solid #ccc;
+    font-family: 'HelveticaNeueBold'; 
+    align-items: center;
+}
+
+.logo{ /* Nessa classe, eu estilizei a área da logo. Usei flexbox novamente para centralizar verticalmente o conteúdo dentro da logo. A margem esquerda de 30px cria um espaço entre a logo e a borda esquerda do cabeçalho. A cor azul (#004AAD) conforme solicitado para a fonte da logo. */
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    color: #004AAD;
+}
+.lista_cab{/* Aqui eu criei uma lista horizontal de links de navegação. O 'display: flex' permite que os links fiquem lado a lado, e o 'gap: 15px' cria um espaço de 15 pixels entre cada link. */
+    display: flex;
+    gap: 15px;
+    
+}
+.link_cab{/* Nessa classe, eu estilizei os links de navegação. Tirei a decoração sublinhada, escolhi uma cor azul para o texto e defini o tamanho da fonte em 20px. */
+    text-decoration: none;
+    color: #004AAD;
+    font-size: 20px;
+}
+
+.bt_cab{/* Essa classe estiliza a área dos botões. Usei flexbox para organizar os botões lado a lado e adicionei uma margem direita para criar um espaço entre os botões e a borda direita do cabeçalho. */
+    display: flex;
+    padding-right: 20px;
+    gap: 10px;
+    width: 300px;
+}
+
+.btn_entrar{ /* Aqui, estou estilizando o botão "Entrar". Defini o tamanho da fonte, largura, altura, arredondamento das bordas, cor do texto, cor de fundo, borda e cursor. Também adicionei uma transição para que o botão mude de aparência quando o mouse estiver sobre ele. */
+    font-size: 20px;
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    color: #2BC866;
+    background-color: white;
+    border: 2px solid #2BC866;
+    cursor: pointer;
+    transition: all 0.4s
+}
+.btn_entrar:hover{/*Aqui quando passar o mouse por cima havera a troca de aparencia*/
+    color: white;
+    background-color: #1A9047;
+    border:none;
+
+}
+
+.btn_cadast{  /* Esse é o estilo para o botão "Cadastre-se". É semelhante ao botão "Entrar", mas com algumas diferenças nas dimensões e cores. */
+    font-size: 20px;
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    color: white;
+    background-color: #1A9047;
+    border:none;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.btn_cadast:hover{/*Aqui quando passar o mouse por cima havera a troca de aparencia*/
+    color: #2BC866;
+    background-color: white;
+    border: 2px solid #2BC866;
+}
+
+body{/* Defini a largura do corpo como 100% para ocupar toda a largura da tela e centralizo o conteúdo horizontalmente. */
+    width: 100%;
+    justify-content: center;
+}
+
+.cont_home{/* Criei um container principal para o conteúdo da página e usei flexbox para posicionar o conteúdo verticalmente no centro. */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    
+    
+}
+.cont_home1{/* Defini um container para a primeira seção do conteúdo. Uso grid para dividir o conteúdo em duas colunas de largura igual e adiciono um espaçamento entre elas. */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: center;
+    width: 800px;
+    padding-bottom: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+    
+}
+
+.txt_home1 h1{/* Defini a cor do título da primeira seção. */
+    color: #2BC866;
+}
+
+.cont_home2{ /* Criei um container para a segunda seção do conteúdo e usei grid para dividir o conteúdo em seis colunas de largura igual e adiciono um espaçamento entre elas. */
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    height: auto;
+    align-items: center;
+    width: 1000px;
+    gap: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    
+}
+
+.bloco_home2{/* Defino o estilo geral do bloco_home2. Defino a largura, altura, borda, preenchimento e arredondamento das bordas. */
+    
+    width: 150px;
+    height: 300px;
+    border: 2px solid #1A9047;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.bloco_home2 img{/* Defino o estilo da imagem dentro do bloco_home2. Adicionei um espaçamento superior para centralizar a imagem verticalmente e defino a largura da imagem. */
+    padding-top:30px ;
+    width: 50px;
+}
+
+.bloco_home2 h1{/* Defino o estilo do título dentro do bloco_home2. Adiciono espaçamento superior e inferior, defini o tamanho da fonte e a cor. */
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: 15px;
+    color: #2BC866;
+}
+.p{ /* Defino o estilo do parágrafo cujo dei o nome da classe de p para facilitar. Defini o tamanho da fonte e um espaçamento inferior. */
+    font-size: 10px;
+    padding-bottom: 20px;
+}
+.p1{/*Defini o tamanho da fonte na classe p1*/
+    font-size: 10px;
+    
+}
+
+.bloco_home2 li{/*Defini o tamanho da fonte e a familia dela para li*/
+    font-size: 10px;
+    font-family: 'Helvetica';
+}
+.btn_seta{/*retirei a borda, defini o fundo brando e ao passar o mouse muda o para pointer*/
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.sobre{/*espacamento em cima de 100px*/
+    padding-top: 100px;
+}
+.sob_cont{/* Aqui, criei um container principal para a seção "Sobre". Usei flexbox para centralizar o conteúdo horizontal e verticalmente. Defini a largura como 100% para ocupar toda a largura da tela, a altura em 800px (pode ser ajustado conforme necessário) e uma cor de fundo verde. */
+    display: flex;
+    width: 100%;
+    height: 800px;
+    background-color: #2BC866;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.sob_cont1{/*Usei flexbox para organizar o texto em uma coluna vertical e adicionei um espaçamento superior. */
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    padding-top: 20px;
+    
+}
+.sob_cont1 h1{/* Estilizei o título da seção "Sobre". Defini a cor branca, o tamanho da fonte e um espaçamento inferior. */
+    color: white;
+    font-size: 40px;
+    padding-bottom: 30px;
+}
+
+.sob_cont1 p{/* Estilizei o parágrafo da seção "Sobre". Defini a cor branca, o tamanho da fonte e um espaçamento inferior. */
+    font-size: 15px;
+    color: white;
+    padding-bottom:30px ;
+}
+.logos{/* Criei um container para as logos. Usei flexbox para organizar horizontalmente com um espaçamento entre eles. Defini a cor de fundo branca, o arredondamento das bordas, o alinhamento vertical e horizontal dos logos e a altura do container. */
+    display: flex;
+    gap: 70px;
+    background-color: white;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+.logos img{/*altura da imagem*/
+    height: 20px;
+}
+
+.sob_img{/*espacamento na esquerda*/
+    padding-left: 20px;
+}
+.sob_img img{/*defini a largura da img*/
+    width: 400px;
+}
+
+.parc{/*Agora na seção Parceiros comecei definindo o container principal como flex na direção de coluna, com espacamento superior e alinhando no centro vertical*/
+    display: flex;
+    flex-direction: column;
+    padding-top: 55px;
+    align-items: center;
+
+}
+.parc h1{/*Defini a fonte e a cor de h1*/
+    font-family: 'HelveticaNeueBold';
+    color: #2BC866;
+}
+.parc p{/*Defini a fonte, um espacamento superior e o tamanho da fonte de p*/
+    font-family: 'Helvetica';
+    padding-top: 20px;
+    font-size: 10px;
+}
+
+.parc_cont{/*Usei flexbox para organizar os elementos horizontalmente com um espaçamento entre eles. Defini a largura do container. */
+    display: flex;
+    gap: 30px;
+    width: 800px;
+    justify-content: center;
+}
+.parc_cont1{/*Usei flexbox para organizar os elementos verticalmente e adicionei um espaçamento superior. */
+
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+}
+.parc_cont1 h1{/*Alterei o tamanho da fonte*/
+    font-size: 15px;
+}
+.parc_cont1 p{/*Alterei o tamanho da fonte e alinhei o texto no centro*/
+    font-size: 12px;
+    text-align: center;
+}
+
+.parc_cont2{/*Usei flexbox para organizar os elementos verticalmente e adicionei um espaçamento superior e inferior. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+}
+.parc_cont2 h1{/*Defini o tamanho da fonte e o espaçamento. */
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    
+}
+
+.parc_cont2 button{ /*Defini a largura, altura, cor do texto, cor de fundo, arredondamento das bordas, borda, cursor e transição. */
+    width: 200px;
+    height: 50px;
+    color: white;
+    background-color: #2BC866;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.parc_cont2 button:hover{/*Quando o mouse esta sobre o botao muda o estilo*/
+    color: #2BC866;
+    background-color: white;
+    border: 2px solid #2BC866;
+}
+
+.ajuda{/*Usei flexbox para organizar os elementos verticalmente e adicionei um espaçamento superior. */
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    align-items: center;
+
+}
+
+.ajuda h1{/* Estilizei o título da seção "Ajuda". Defini a família da fonte e a cor. */
+    font-family: 'HelveticaNeueBold';
+    color: #2BC866;
+}
+.ajuda1{/*Usei flexbox para organizar os elementos horizontalmente e adicionei um espaçamento superior e uma altura fixa. */
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    height: 50px;
+    gap: 10px;
+}
+.ajuda1 input{/* Estilizei o campo de entrada de texto. Defini a altura, largura, arredondamento das bordas e a cor da borda. */
+    height: 47px;
+    width: 300px;
+    border-radius: 5px;
+}
+.ajuda1 button{ /* Estilizei o botão de envio. Defini a largura, altura, cor do texto, cor de fundo, tamanho da fonte, família da fonte, borda, arredondamento das bordas, cursor e transição. */
+    width: 150px;
+    background-color: rgb(175, 175, 175);
+    color: white;
+    height: 50px;
+    font-size: 15px;
+    font-family: 'Helvetica';
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.ajuda1 button:hover{/*Altera o estilo ao passar o mouse*/
+    background-color: #8b8888;
+    }
+.ajuda1 img{/*Defini o tamanho da imagem dentro do botao*/
+    height: 15px;
+}
+.img_cx{/* Defini o espaçamento superior e a largura da imagem. */
+    padding-top: 200px;
+    width: 1024px;
+}
